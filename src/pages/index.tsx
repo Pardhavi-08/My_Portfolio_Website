@@ -1,7 +1,7 @@
 import { FaComputer } from 'react-icons/fa6';
 import Navbar from '../components/Navbar';
 import { FaLinkedin, FaGithub, FaPhoneAlt, FaEnvelope, FaGraduationCap, FaSchool, FaCode, FaTools, FaLaptopCode, FaExternalLinkAlt } from 'react-icons/fa';
-
+import Image from "next/image";
 export default function Home() {
   return (
     <>
@@ -61,14 +61,7 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="mt-10 md:mt-0 pr-6 md:pr-16">
-            <img
-  src="f58a4bb7-afa6-4285-b59b-4a5e676a86bd.jpg"   
-  alt="Profile"
-  className="w-52 h-52 rounded-full object-cover shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
-/>
-
-          </div>
+     
         </section>
 
         {/* About Section */}
@@ -81,16 +74,16 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-lg text-gray-700">
-              I'm an enthusiastic and dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in creating responsive, user-friendly web applications using modern stacks like React, Next.js, and Tailwind CSS. My approach to development combines clean, maintainable code with a deep understanding of design principles and user experience.
+              I&apos;m an enthusiastic and dedicated Computer Science student with a strong foundation across software development, full-stack web technologies, and applied machine learning. My experience spans building responsive, user-centric applications with modern frameworks like React, Next.js, and Tailwind CSS, as well as implementing scalable backends with Node.js, Express.js, and MongoDB.
             </p>
             <p className="text-lg text-gray-700">
-              With a background in Computer Science and hands-on experience from internships and academic work, I thrive in collaborative environments and enjoy turning ideas into real-world solutions. I’m constantly expanding my skills in full-stack development, machine learning integration, and cloud-based technologies.
+              Beyond web development, I have applied ML in real-world projects like fingerprint-based blood group detection and sentiment analysis, strengthening my ability to design and deploy functional, user-focused solutions.
             </p>
             <p className="text-lg text-gray-700">
-              Outside of coding, I love staying updated with the latest tech trends, refining UI/UX interactions, and contributing to meaningful digital products. I value continuous learning, creative problem-solving, and building scalable applications that make an impact.
+              Outside of academics and coding, I enjoy refining UI/UX interactions, keeping up with the latest tech innovations, and experimenting with creative problem-solving approaches. I value continuous learning, adaptability, and innovation, and I aim to contribute to projects that make a meaningful difference.
             </p>
             <p className="text-lg text-gray-700">
-              Let’s innovate and build together!
+              Let&apos;s innovate and build together!
             </p>
           </div>
         </section>
@@ -183,11 +176,11 @@ export default function Home() {
               {[{
                 title: "Programming Languages",
                 icon: <FaCode className="text-gray-500" />,
-                items: ["C", "C++", "Python"]
+                items: ["C", "C++"]
               }, {
                 title: "Tools and Version Control",
                 icon: <FaTools className="text-gray-500" />,
-                items: ["VS Code", "GitHub", "GitHub", "Canva", "Figma"]
+                items: ["VS Code", "GitHub", "Canva"]
               }, {
                 title: "Front-End",
                 icon: <FaLaptopCode className="text-gray-500" />,
@@ -337,54 +330,59 @@ export default function Home() {
     {/* Right: Contact Form */}
     {/* Right: Contact Form */}
 <div className="w-full max-w-md mx-auto">
-  <form
-    name="contact"
-    method="POST"
-    action="/thank-you"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    className="space-y-6 bg-gray-50 p-6 rounded-xl shadow-md"
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/success"        // where to redirect after submit (we’ll add this page)
+  className="space-y-6 bg-gray-50 p-6 rounded-xl shadow-md"
+>
+  {/* Netlify required hidden fields */}
+  <input type="hidden" name="form-name" value="contact" />
+  <p className="hidden">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+
+  {/* your inputs */}
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+    className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+  />
+  <textarea
+    name="message"
+    rows={5}
+    placeholder="Your Message"
+    required
+    className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+  />
+  <button
+    type="submit"
+    className="bg-purple-600 text-white px-6 py-3 rounded-md shadow hover:bg-purple-700 transition"
   >
-    {/* Netlify hidden fields */}
-    <input type="hidden" name="form-name" value="contact" />
-    <input type="hidden" name="bot-field" />
+    Send Message
+  </button>
+</form>
 
-    <input
-      type="text"
-      name="name"
-      placeholder="Your Name"
-      required
-      className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-    />
-
-    <input
-      type="email"
-      name="email"
-      placeholder="Your Email"
-      required
-      className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-    />
-
-    <textarea
-      name="message"
-      rows={5}
-      placeholder="Your Message"
-      required
-      className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-    ></textarea>
-
-    <button
-      type="submit"
-      className="bg-purple-600 text-white px-6 py-3 rounded-md shadow hover:bg-purple-700 transition"
-    >
-      Send Message
-    </button>
-  </form>
 </div>
 
   </div>
 </section>
-
+ <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message" />
+      </form>
 
       </main>
     </>
