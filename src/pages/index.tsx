@@ -1,7 +1,7 @@
 import { FaComputer } from 'react-icons/fa6';
 import Navbar from '../components/Navbar';
 import { FaLinkedin, FaGithub, FaPhoneAlt, FaEnvelope, FaGraduationCap, FaSchool, FaCode, FaTools, FaLaptopCode, FaExternalLinkAlt } from 'react-icons/fa';
-import Image from "next/image";
+
 export default function Home() {
   return (
     <>
@@ -25,7 +25,7 @@ export default function Home() {
           <div className="space-y-4 max-w-xl px-6 md:px-16 text-center md:text-left">
             <h2 className="text-3xl text-gray-800">Hii There,</h2>
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight whitespace-nowrap">
-              <span className="text-gray-800">I'm </span>
+              <span className="text-gray-800">I&apos;m </span>
               <span className="text-purple-600">Pardhavi Mallampati</span>
             </h1>
             <p className="text-2xl text-gray-700">I Am Into Web Development.</p>
@@ -60,7 +60,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Image */}
      
         </section>
 
@@ -73,18 +72,21 @@ export default function Home() {
             <h2 className="mt-8 text-3xl font-semibold text-gray-800 underline underline-offset-4 decoration-purple-500">
               About Me
             </h2>
-            <p className="text-lg text-gray-700">
-              I&apos;m an enthusiastic and dedicated Computer Science student with a strong foundation across software development, full-stack web technologies, and applied machine learning. My experience spans building responsive, user-centric applications with modern frameworks like React, Next.js, and Tailwind CSS, as well as implementing scalable backends with Node.js, Express.js, and MongoDB.
-            </p>
-            <p className="text-lg text-gray-700">
-              Beyond web development, I have applied ML in real-world projects like fingerprint-based blood group detection and sentiment analysis, strengthening my ability to design and deploy functional, user-focused solutions.
-            </p>
-            <p className="text-lg text-gray-700">
-              Outside of academics and coding, I enjoy refining UI/UX interactions, keeping up with the latest tech innovations, and experimenting with creative problem-solving approaches. I value continuous learning, adaptability, and innovation, and I aim to contribute to projects that make a meaningful difference.
-            </p>
-            <p className="text-lg text-gray-700">
-              Let&apos;s innovate and build together!
-            </p>
+             <p className="text-lg text-gray-700">
+  A Computer Science student with a solid foundation in software development, web technologies, and applied machine learning. Experienced in building scalable, user-focused applications using modern development frameworks, with an emphasis on clean architecture and efficient system design.
+</p>
+
+<p className="text-lg text-gray-700">
+  Exposure to intelligent systems and data-driven approaches has strengthened the ability to translate technical concepts into practical solutions. This includes working across the full development lifecycle, from interface design to backend integration, while maintaining a focus on usability and performance.
+</p>
+
+<p className="text-lg text-gray-700">
+  Beyond technical implementation, there is a strong interest in refining user experiences, adapting to evolving technologies, and approaching challenges with a structured and thoughtful mindset. A commitment to continuous learning and adaptability drives the motivation to contribute to impactful and meaningful digital solutions.
+</p>
+
+<p className="text-lg text-gray-800">
+  Focused on growth, collaboration, and delivering value through technology.
+</p>
           </div>
         </section>
 
@@ -101,14 +103,14 @@ export default function Home() {
     {[
       {
         title: 'Smart Healthcare System',
-        description: 'An IoT-based solution for real-time patient monitoring with emergency alert systems.',
-        tools: ['React.js', 'Node.js', 'MongoDB', 'Python', 'TensorFlow','OpenCV'],
+        description: 'Fingerprint-based blood group detection with online doctor appointment booking.',
+        tools: ['React.js', 'Node.js', 'MongoDB', 'Express.js','Python', 'TensorFlow','OpenCV'],
         github: 'https://github.com/Pardhavi-08/Smart-Healthcare-System',
         demo: 'https://drive.google.com/file/d/10vEgauWPZCbOPNARuvmkbS6Ou1WsuAYO/view?usp=sharing',
       },
       {
         title: 'Sentiment Analysis',
-        description: 'Analyzed user sentiments from text data using NLP and machine learning techniques.',
+        description: 'Analyzed user sentiments from text data using machine learning techniques.',
         tools: ['Python', 'NLTK', 'Scikit-learn', 'Pandas','Numpy','TF-IDF'],
         github: 'https://github.com/Pardhavi-08/ML-Sentiment_Analysis',
         demo: 'https://pardhavi-08-ml-sentiment-analysis-predict-hvsfr4.streamlit.app/',
@@ -176,15 +178,15 @@ export default function Home() {
               {[{
                 title: "Programming Languages",
                 icon: <FaCode className="text-gray-500" />,
-                items: ["C", "C++"]
+                items: ["C", "C++", "Java"]
               }, {
-                title: "Tools and Version Control",
+                title: "Databases",
                 icon: <FaTools className="text-gray-500" />,
-                items: ["VS Code", "GitHub", "Canva"]
+                items: ["MySQL", "MongoDB"]
               }, {
-                title: "Front-End",
+                title: "Web Development",
                 icon: <FaLaptopCode className="text-gray-500" />,
-                items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"]
+                items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS","MERN"]
               }, {
                 title: "Machine Learning",
                 icon: <FaComputer className="text-gray-500" />,
@@ -231,7 +233,7 @@ export default function Home() {
                 period: "2022 - Present",
                 title: "B.Tech in Computer Science and Engineering",
                 institute: "SRM University AP",
-                result: " CGPA 7.91 / 10.0",
+                result: " CGPA 8.03 / 10.0",
                 icon: <FaGraduationCap className="text-gray-600" size={48}/>
               }, {
                 period: "2020 - 2022",
@@ -282,7 +284,7 @@ export default function Home() {
       </p>
 
       <h3 className="text-xl font-semibold text-gray-600 text-center md:text-left">
-        Let’s Connect!
+        Let&apos;s Connect!
       </h3>
 
       {/* Icons Row */}
@@ -319,7 +321,7 @@ export default function Home() {
 
       {/* Resume Button */}
       <a
-        href="Resume.pdf"
+        href="resume.pdf"
         download
         className="bg-purple-600 text-white px-5 py-2 rounded-md shadow hover:bg-purple-700 transition"
       >
@@ -341,7 +343,7 @@ export default function Home() {
   {/* Netlify required hidden fields */}
   <input type="hidden" name="form-name" value="contact" />
   <p className="hidden">
-    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    <label>Don&apos;t fill this out if you&apos;re human:<input name="bot-field" /></label>
   </p>
 
   {/* your inputs */}
