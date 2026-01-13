@@ -280,7 +280,7 @@ export default function Home() {
     <div className="flex flex-col items-center md:items-start space-y-6">
       {/* Heading Text */}
       <p className="text-lg text-gray-600 max-w-md text-center md:text-left">
-        I'm always open to new opportunities, collaborations, or just a friendly tech conversation. Whether you have a project in mind, a question, or simply want to say hello — feel free to connect!
+        I&apos;m always open to new opportunities, collaborations, or just a friendly tech conversation. Whether you have a project in mind, a question, or simply want to say hello — feel free to connect!
       </p>
 
       <h3 className="text-xl font-semibold text-gray-600 text-center md:text-left">
@@ -333,59 +333,76 @@ export default function Home() {
     {/* Right: Contact Form */}
 <div className="w-full max-w-md mx-auto">
 <form
-  name="contact"
+  action="https://formsubmit.co/pardhavi084@gmail.com"
   method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/success"        // where to redirect after submit (we’ll add this page)
-  className="space-y-6 bg-gray-50 p-6 rounded-xl shadow-md"
+  className="w-full max-w-md mx-auto space-y-5 bg-white/70 backdrop-blur-md 
+             p-6 rounded-xl border border-purple-200 shadow-lg"
 >
-  {/* Netlify required hidden fields */}
-  <input type="hidden" name="form-name" value="contact" />
-  <p className="hidden">
-    <label>Don&apos;t fill this out if you&apos;re human:<input name="bot-field" /></label>
-  </p>
+  {/* REQUIRED hidden fields */}
+  <input type="hidden" name="_captcha" value="false" />
 
-  {/* your inputs */}
+  {/* Redirect AFTER submit */}
   <input
-    type="text"
+    type="hidden"
+    name="_next"
+    value="http://localhost:3000/success"
+  />
+
+  {/* Optional: email subject */}
+  <input
+    type="hidden"
+    name="_subject"
+    value="New message from Portfolio Contact Form"
+  />
+
+  {/* Name */}
+  <input
     name="name"
+    required
     placeholder="Your Name"
-    required
-    className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+    className="w-full px-4 py-3 rounded-md border border-gray-400
+               text-gray-800 placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-purple-400"
   />
+
+  {/* Email */}
   <input
-    type="email"
     name="email"
-    placeholder="Your Email"
+    type="email"
     required
-    className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+    placeholder="Your Email"
+    className="w-full px-4 py-3 rounded-md border border-gray-400
+               text-gray-800 placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-purple-400"
   />
+
+  {/* Message */}
   <textarea
     name="message"
     rows={5}
-    placeholder="Your Message"
     required
-    className="w-full px-4 py-3 border border-gray-600 text-gray-700 placeholder-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+    placeholder="Your Message"
+    className="w-full px-4 py-3 rounded-md border border-gray-400
+               text-gray-800 placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-purple-400"
   />
+
+  {/* Submit */}
   <button
     type="submit"
-    className="bg-purple-600 text-white px-6 py-3 rounded-md shadow hover:bg-purple-700 transition"
+    className="w-full bg-purple-600 text-white py-3 rounded-md
+               hover:bg-purple-700 transition-all"
   >
     Send Message
   </button>
 </form>
 
+
+
 </div>
 
   </div>
 </section>
- <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message" />
-      </form>
-
       </main>
     </>
   );
